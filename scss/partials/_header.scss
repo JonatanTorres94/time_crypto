@@ -1,0 +1,30 @@
+#logo_index{
+    padding-right: 40px;
+}
+
+/* Colores y estilos de Binance para los botones */
+.btn-login,
+.btn-signup {
+    background-color: #f3ba2f;
+    color: #fafaff;
+    border: none;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+    background-color: #ffa400;
+}
+
+/* Estilo de los enlaces de navegación */
+.navbar-link {
+    font-size: 14px;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-link:hover {
+    background-color: #6c757d;
+}

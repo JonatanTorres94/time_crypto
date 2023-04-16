@@ -1,0 +1,259 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#logo_index {
+  padding-right: 40px;
+}
+
+/* Colores y estilos de Binance para los botones */
+.btn-login,
+.btn-signup {
+  background-color: #f3ba2f;
+  color: #fafaff;
+  border: none;
+  font-size: 18px;
+  transition: background-color 0.5s ease;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  background-color: #ffa400;
+}
+
+/* Estilo de los enlaces de navegación */
+.navbar-link {
+  font-size: 14px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-link:hover {
+  background-color: #6c757d;
+}
+
+.pattern-bg {
+  background-color: black;
+}
+
+.index h1 {
+  color: white;
+  text-align: center;
+}
+.index p {
+  color: rgba(253, 229, 229, 0.562);
+  margin: 35px 200px 20px 200px;
+}
+
+.services h2 {
+  color: white;
+  text-align: center;
+}
+.services h3 {
+  color: white;
+  text-align: left;
+  margin-left: 200px;
+  margin-bottom: 3%;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding-bottom: 5%;
+  margin: 20px 100px 20px 250px;
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  border-color: black;
+  box-shadow: 0 0 5px 5px #f3ba2f;
+  border-width: 3px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.card p {
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+  margin: 15px;
+}
+.card h2 {
+  font-size: 22px;
+  color: black;
+}
+.card:hover {
+  transform: scale(1.04);
+}
+
+.line-container {
+  margin-bottom: 20px;
+}
+
+.custom-line {
+  border: black;
+  border-top: 4px solid #dfa20a;
+  height: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1450px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+  }
+  .card {
+    width: 300px;
+    height: 550px;
+  }
+  .card p {
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    color: black;
+    margin: 5%;
+  }
+  .footer {
+    display: none;
+  }
+}
+@media (max-width: 980px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+  }
+  .card {
+    width: 300px;
+    height: 400px;
+  }
+  .card p {
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    color: black;
+    margin: 5%;
+  }
+  .footer {
+    display: none;
+  }
+}
+.frequent_questions h2 {
+  color: white;
+  text-align: center;
+}
+.frequent_questions h4 {
+  color: white;
+  text-align: start;
+  margin: 30px 10px 10px 200px;
+}
+
+.readMore_btn {
+  background-color: black;
+  color: #f3ba2f;
+  border: 1px solid #ccc;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 2px;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.readMore_btn:hover {
+  background-color: white;
+}
+
+.hide {
+  display: none;
+  color: white;
+  font-size: 18px;
+  margin: 15px 10px 10px 230px;
+}
+
+.hide2 {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.show2 {
+  display: block;
+}
+
+.wrapper {
+  min-height: calc(100% - 50px); /* Establece la altura mínima del contenedor principal, dejando espacio para el footer */
+  padding-bottom: 50px; /* Añade un padding inferior igual a la altura del footer */
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: #0f1115; /* Establece el color de fondo del footer */
+  color: #fff; /* Establece el color de texto del footer */
+  padding-top: 30px; /* Añade un espacio en la parte superior del footer */
+  padding-bottom: 30px; /* Añade un espacio en la parte inferior del footer */
+  margin-top: 50px; /* Añade un margen superior */
+}
+
+footer p {
+  margin-bottom: 0; /* Elimina el margen inferior de los párrafos */
+}
+
+.container {
+  max-width: 1140px; /* Establece el ancho máximo del contenedor del footer */
+  margin: 0 auto; /* Centra el contenedor del footer */
+}
+
+.social-media {
+  text-align: right; /* Alinea las redes sociales a la derecha */
+}
+
+.social-media a {
+  display: inline-block;
+  margin-left: 10px; /* Agrega un margen entre las redes sociales */
+  color: #fff;
+  font-size: 20px;
+}
+
+.social-media a:hover {
+  color: #ccc; /* Cambia el color de las redes sociales al hacer hover */
+}
+
+.social-media i {
+  vertical-align: middle;
+}
+
+.fa-twitter:before {
+  content: "\f099"; /* Cambia el icono de Twitter */
+}
+
+.fa-facebook:before {
+  content: "\f09a"; /* Cambia el icono de Facebook */
+}
+
+.fa-instagram:before {
+  content: "\f16d"; /* Cambia el icono de Instagram */
+}
+
+svg {
+  height: 25px;
+  width: 25px;
+}
+
+/*# sourceMappingURL=styles.css.map */

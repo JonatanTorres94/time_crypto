@@ -1,0 +1,60 @@
+.wrapper {
+    min-height: calc(100% - 50px); /* Establece la altura mínima del contenedor principal, dejando espacio para el footer */
+    padding-bottom: 50px; /* Añade un padding inferior igual a la altura del footer */
+  }
+  
+  footer {
+    
+    position: relative;
+    bottom: 0;
+    background-color: #0f1115; /* Establece el color de fondo del footer */
+    color: #fff; /* Establece el color de texto del footer */
+    padding-top: 30px; /* Añade un espacio en la parte superior del footer */
+    padding-bottom: 30px; /* Añade un espacio en la parte inferior del footer */
+    margin-top: 50px; /* Añade un margen superior */
+  }
+  
+  footer p {
+    margin-bottom: 0; /* Elimina el margen inferior de los párrafos */
+  }
+  
+  .container {
+    max-width: 1140px; /* Establece el ancho máximo del contenedor del footer */
+    margin: 0 auto; /* Centra el contenedor del footer */
+  }
+  
+  .social-media {
+    text-align: right; /* Alinea las redes sociales a la derecha */
+  }
+  
+  .social-media a {
+    display: inline-block;
+    margin-left: 10px; /* Agrega un margen entre las redes sociales */
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .social-media a:hover {
+    color: #ccc; /* Cambia el color de las redes sociales al hacer hover */
+  }
+  
+  .social-media i {
+    vertical-align: middle;
+  }
+  
+  .fa-twitter:before {
+    content: "\f099"; /* Cambia el icono de Twitter */
+  }
+  
+  .fa-facebook:before {
+    content: "\f09a"; /* Cambia el icono de Facebook */
+  }
+  
+  .fa-instagram:before {
+    content: "\f16d"; /* Cambia el icono de Instagram */
+  }
+
+  svg{
+    height: 25px;
+    width: 25px;
+  }

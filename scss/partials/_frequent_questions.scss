@@ -1,0 +1,54 @@
+.frequent_questions{
+    h2 {
+        color: white;
+        text-align: center;
+    }
+    
+    h4{
+        color: white;
+        text-align: start;
+        margin: 30px 10px 10px 200px;
+    }
+}
+
+.readMore_btn{
+    background-color: black;
+    color: #f3ba2f;
+    border: 1px solid #ccc;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    line-height: 2px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+
+  
+  .readMore_btn:hover {
+    background-color: white;
+  }
+  
+
+  .hide{
+    display: none;
+    color: white;
+    font-size: 18px;
+    margin: 15px 10px 10px 230px;
+  }
+
+  .hide2{
+    display: none;
+  }
+
+  .show{
+    display: block;
+  }
+
+  
+  .show2{
+    display: block;
+  }
