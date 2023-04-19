@@ -35,9 +35,10 @@
                                 </li>
                             </div>
                             <li><a href="#services" class="nav-link px-2 text-white">Servicios</a></li>
-                            <li><a href="#frequent_questions" class="nav-link px-2 text-white">Preguntas Frecuentes</a></li>
-                            <li><a href="#" class="nav-link px-2 text-white">Como funciona</a></li>
-                            <li><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
+                            <li><a href="#frequent_questions" class="nav-link px-2 text-white">Preguntas Frecuentes</a>
+                            </li>
+                            <li><a href="#how_does_it_work" class="nav-link px-2 text-white">Como funciona</a></li>
+                            <li><a href="#contact" class="nav-link px-2 text-white">Contacto</a></li>
                         </ul>
 
                         <div class="text-end">
@@ -51,7 +52,7 @@
 
 
         <div class="index">
-            <h1>Bienvenido a timeCrypto una plataforma de inversión</h1>
+            <h1 class="neon">Bienvenido a timeCrypto una plataforma de inversión</h1>
             <p>Somos una plataforma de inversión en criptomonedas que ofrece a nuestros usuarios la oportunidad de
                 invertir
                 en dos tipos de productos: <strong>Plazos fijos y Trading con bots.</strong>
@@ -79,7 +80,7 @@
 
         <div class="services">
             <a href="services" id="services"></a>
-            <h2>Servicios</h2>
+            <h2 class="subtitle">Servicios</h2>
 
             <h3>Plazos Fijos</h3>
 
@@ -190,26 +191,117 @@
 
         <div class="frequent_questions">
             <a href="frequent_questions" id="frequent_questions"></a>
-            <h2>Preguntas Frecuentes</h2>
+            <h2 class="subtitle">Preguntas Frecuentes</h2>
             <h4>¿Cual es el monto minimo que se puede invertir? <button class="readMore_btn"
                     id="hideText_btn">+</button></h4>
+
             <span class="hide" id="hideText">
-                <p>Esta es la respuesta</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptas exercitationem dolorem nihil
+                    deserunt obcaecati, nemo magni perspiciatis iste molestias, cum et adipisci tenetur. Quisquam non
+                    est dolores porro magnam?</p>
             </span>
-
-
-
-            <h4>¿Cual es el monto minimo que se puede invertir? <button class="readMore_btn"
+            <h4>¿Cuales son los requisitos para realizar mi primer contrato con TimeCrypto? <button class="readMore_btn"
                     id="hideText_btn2">+</button></h4>
 
             <span class="hide" id="hideText2">
-                <p>Esta es la respuesta</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                    eos
+                    illo eius!</p>
             </span>
 
+            <h4>¿Para que se utilizan mis datos de registro? <button class="readMore_btn" id="hideText_btn3">+</button>
+            </h4>
+
+            <span class="hide" id="hideText3">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                    eos
+                    illo eius!</p>
+            </span>
+
+            <h4>¿Como solicitar un retiro anticipado y cuanto demora? <button class="readMore_btn"
+                    id="hideText_btn4">+</button>
+            </h4>
+
+            <span class="hide" id="hideText4">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                    eos
+                    illo eius!</p>
+            </span>
+
+            <h4>¿Se puede tener mas de un contrato activo? <button class="readMore_btn" id="hideText_btn5">+</button>
+            </h4>
+
+            <span class="hide" id="hideText5">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                    eos
+                    illo eius!</p>
+            </span>
 
         </div>
 
 
+
+        <hr class="footer-line">
+
+        <div class="how_does_it_work">
+            <a href="how_does_it_work" id="how_does_it_work"></a>
+            <h2 class="subtitle">¿Como funciona?</h2>
+
+            <video class="video_how" controls poster="./img/logo_png.png">
+                <source src="./video/timecrypto.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <hr class="footer-line">
+
+        <div class="contact">
+            <a href="contact" id="contact"></a>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="contact-card ">
+                            <div class="title-form">Formulario de contacto</div>
+                            <hr class="contact-line">
+                            <div class="card-body">
+                                <form method="post" action="#">
+                                    <div class="form-gr">
+                                        <label for="name">Nombre:</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="form-gr">
+                                        <label for="email">Correo electrónico:</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-gr">
+                                        <label for="phone">Teléfono:</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone">
+                                    </div>
+                                    <div class="form-gr">
+                                        <label for="reason">Motivo:</label>
+                                        <select class="form-control" id="reason" name="reason" required>
+                                            <option value="">Selecciona una opción</option>
+                                            <option value="consulta">Consulta</option>
+                                            <option value="sugerencia">Sugerencia</option>
+                                            <option value="reclamo">Reclamo</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-gr">
+                                        <label for="message">Descripción:</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5"
+                                            required></textarea>
+                                    </div>
+                                    <button type="submit" class="button-send">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <footer class="bg-dark">
             <!-- Contenido del footer -->

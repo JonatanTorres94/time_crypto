@@ -48,10 +48,25 @@
   margin: 35px 200px 20px 200px;
 }
 
-.services h2 {
+.neon {
+  font-size: 6em;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 1s;
+}
+.neon:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #f5f108, 0 0 25px #f5f108, 0 0 50px #f5f108, 0 0 100px #f5f108;
+}
+
+.subtitle {
   color: white;
   text-align: center;
 }
+
 .services h3 {
   color: white;
   text-align: left;
@@ -89,6 +104,7 @@
 .card h2 {
   font-size: 22px;
   color: black;
+  text-align: center;
 }
 .card:hover {
   transform: scale(1.04);
@@ -148,10 +164,6 @@
     display: none;
   }
 }
-.frequent_questions h2 {
-  color: white;
-  text-align: center;
-}
 .frequent_questions h4 {
   color: white;
   text-align: start;
@@ -181,7 +193,7 @@
   display: none;
   color: white;
   font-size: 18px;
-  margin: 15px 10px 10px 230px;
+  margin: 15px 200px 10px 230px;
 }
 
 .hide2 {
@@ -194,6 +206,117 @@
 
 .show2 {
   display: block;
+}
+
+.hide3 {
+  display: none;
+}
+
+.show3 {
+  display: block;
+}
+
+.hide4 {
+  display: none;
+}
+
+.show4 {
+  display: block;
+}
+
+.hide5 {
+  display: none;
+}
+
+.show5 {
+  display: block;
+}
+
+.video_how {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 800px;
+  height: 500px;
+  border: 1px solid white;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/*El código aqui presente define los estilos para un contenedor,
+ una tarjeta de contacto, controles de formulario y estrellas.
+ El contenedor se ha configurado para que se centre en la pantalla
+ con display flex y los elementos dentro de él se alineen en el centro.
+ La tarjeta de contacto tiene un ancho máximo de 800px, un borde redondeado,
+ sombra y margen. Se han aplicado reglas de medios para ajustar la tarjeta
+ a dispositivos más pequeños. Los controles del formulario tienen una 
+ sombra nula cuando se enfocan. Las estrellas tienen un color diferente 
+ cuando están activas.*/
+.container-fluid {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  position: relative;
+  justify-content: center;
+}
+
+.contact-card {
+  height: 650px;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.form-gr {
+  text-align: start;
+  font-size: 18px;
+  margin: 15px;
+  color: white;
+}
+
+.title-form {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 10px;
+  color: white;
+}
+
+.button-send {
+  text-align: center;
+  align-items: center;
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  color: black;
+  margin-left: 45%;
+  border: 2px ridge #ffffff;
+}
+.button-send:hover {
+  transform: scale(1.18);
+  background-color: #f3ba2f;
+  color: #d1d1d1;
+}
+
+@media (max-width: 850px) {
+  .contact-card {
+    height: 750px;
+    width: 300px;
+  }
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+.contact-line {
+  border: white;
+  border-top: 2px solid #fff;
+  height: 0;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .wrapper {

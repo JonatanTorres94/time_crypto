@@ -33,3 +33,56 @@ function toggleText2(){
     }
 
 }
+
+let hideText_btn3 = document.getElementById('hideText_btn3');
+let hideText3 = document.getElementById('hideText3');
+
+hideText_btn3.addEventListener('click', toggleText3);
+
+function toggleText3(){
+    hideText3.classList.toggle('show3');
+
+    if(hideText3.classList.contains('show3')){
+        hideText_btn3.innerHTML = '-';
+    }
+    else{
+        hideText_btn3.innerHTML = '+';
+    }
+
+}
+
+let hideText_btn4 = document.getElementById('hideText_btn4');
+let hideText4 = document.getElementById('hideText4');
+
+hideText_btn4.addEventListener('click', toggleText4);
+
+function toggleText4(){
+    hideText4.classList.toggle('show4');
+
+    if(hideText4.classList.contains('show4')){
+        hideText_btn4.innerHTML = '-';
+    }
+    else{
+        hideText_btn4.innerHTML = '+';
+    }
+
+}
+
+let hideText_btn5 = document.getElementById('hideText_btn5');
+let hideText5 = document.getElementById('hideText5');
+
+hideText_btn5.addEventListener('click', toggleText5);
+
+function toggleText5(){
+    hideText5.classList.toggle('show5');
+
+    if(hideText5.classList.contains('show5')){
+        hideText_btn5.innerHTML = '-';
+    }
+    else{
+        hideText_btn5.innerHTML = '+';
+    }
+
+}
+
+
