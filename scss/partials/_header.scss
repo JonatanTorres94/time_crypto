@@ -1,6 +1,9 @@
 #logo_index{
     padding-right: 40px;
 }
+#userName{
+    margin: 15px;
+}
 
 /* Colores y estilos de Binance para los botones */
 .btn-login,
@@ -28,3 +31,9 @@
 .navbar-link:hover {
     background-color: #6c757d;
 }
+
+.hide {
+    pointer-events: auto;
+    opacity: 0 ;
+}
+

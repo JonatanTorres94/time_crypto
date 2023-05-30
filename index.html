@@ -10,12 +10,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- My css -->
     <link rel="stylesheet" href="./css/styles.css">
 
 </head>
 
 <body>
+
     <div class="pattern-bg">
 
         <div class="wrapper">
@@ -41,9 +44,19 @@
                             <li><a href="#contact" class="nav-link px-2 text-white">Contacto</a></li>
                         </ul>
 
+                        <button class="btn btn-outline-light me-2 btn-login" id="contract"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>file-document-edit-outline</title>
+                                <path
+                                    d="M8,12H16V14H8V12M10,20H6V4H13V9H18V12.1L20,10.1V8L14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H10V20M8,18H12.1L13,17.1V16H8V18M20.2,13C20.3,13 20.5,13.1 20.6,13.2L21.9,14.5C22.1,14.7 22.1,15.1 21.9,15.3L20.9,16.3L18.8,14.2L19.8,13.2C19.9,13.1 20,13 20.2,13M20.2,16.9L14.1,23H12V20.9L18.1,14.8L20.2,16.9Z" />
+                            </svg></button>
+                        <div id="userName"></div>
+
                         <div class="text-end">
-                            <button type="button" class="btn btn-outline-light me-2 btn-login">Acceso</button>
-                            <button type="button" class="btn btn-warning btn-signup">Registrarse</button>
+                            <button id="acceso" type="button"
+                                class="btn btn-outline-light me-2 btn-login">Acceso</button>
+                            <button id="register_id" type="button"
+                                class="btn btn-warning btn-signup">Registrarse</button>
                         </div>
                     </div>
                 </div>
@@ -76,9 +89,13 @@
             </p>
 
         </div>
+
+
+
         <hr class="footer-line">
 
         <div class="services">
+
             <a href="services" id="services"></a>
             <h2 class="subtitle">Servicios</h2>
 
@@ -86,35 +103,37 @@
 
             <div class="card-container">
 
-                <div class="card">
-                    <div class="line-container">
-                        <h2>Plan de 45 Días</h2>
+                <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+                    <div class="card">
+                        <div class="line-container">
+                            <h2>Plan de 45 Días</h2>
 
-                        <hr class="custom-line">
+                            <hr class="custom-line">
 
-                        <p>El vuelo en helicóptero sobre las Cataratas es uno de los paseos más solicitados en Foz do
-                            Iguaçu. A
-                            bordo de los aviones de Helisul, puede disfrutar de una hermosa vista de las cataratas de
-                            Iguazú.
-                        </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea autem molestiae magnam enim
+                                sint eum natus numquam obcaecati quidem iure qui praesentium voluptatibus incidunt ut,
+                                ipsam facilis rem! Odit, alias?
+                            </p>
+
+                        </div>
+                        
                     </div>
 
                 </div>
 
 
-                <div class="card">
-                    <div class="line-container">
-                        <h2>Plan de 90 Días</h2>
+                <div data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+                    <div class="card">
+                        <div class="line-container">
+                            <h2>Plan de 90 Días</h2>
 
-                        <hr class="custom-line">
+                            <hr class="custom-line">
 
-                        <p>El vuelo en helicóptero sobre las Cataratas es uno de los paseos más solicitados en Foz do
-                            Iguaçu. A
-                            bordo de los aviones de Helisul, puede disfrutar de una hermosa vista de las cataratas de
-                            Iguazú.
-                        </p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat consectetur natus, cumque cum pariatur earum accusamus error illo dicta, vero sit amet porro doloremque perspiciatis quibusdam culpa autem. Eum, quae!
+                            </p>
+                        </div>
+
                     </div>
-
                 </div>
 
             </div>
@@ -123,68 +142,64 @@
 
             <div class="card-container">
 
-                <div class="card">
-                    <div class="line-container">
-                        <h2>Plan de 7 Días</h2>
+                <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+                    <div class="card">
+                        <div class="line-container">
+                            <h2>Plan de 7 Días</h2>
 
-                        <hr class="custom-line">
+                            <hr class="custom-line">
 
-                        <p>El vuelo en helicóptero sobre las Cataratas es uno de los paseos más solicitados en Foz do
-                            Iguaçu. A
-                            bordo de los aviones de Helisul, puede disfrutar de una hermosa vista de las cataratas de
-                            Iguazú.
-                        </p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ipsum quod ab aliquam aspernatur eaque, eligendi architecto ducimus recusandae nulla consequatur quos soluta quo labore ullam asperiores magni rerum dignissimos?
+                            </p>
+                        </div>
+
                     </div>
+                </div>
 
+                <div data-aos="flip-left" data-aos-delay="400" data-aos-duration="1100">
+                    <div class="card">
+                        <div class="line-container">
+                            <h2>Plan de 15 Días</h2>
+
+                            <hr class="custom-line">
+
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, autem amet! Porro, aliquid itaque exercitationem libero quod assumenda, corrupti neque in quasi excepturi officia veritatis? Repudiandae sunt mollitia culpa impedit?
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div data-aos="flip-left" data-aos-delay="500" data-aos-duration="1200">
+                    <div class="card">
+                        <div class="line-container">
+                            <h2>Plan de 30 Días</h2>
+
+                            <hr class="custom-line">
+
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat beatae praesentium ipsam adipisci veritatis assumenda possimus hic, animi nesciunt, quas dicta consequatur repellendus asperiores iusto est cumque maiores, nemo tempora?
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
 
 
-                <div class="card">
-                    <div class="line-container">
-                        <h2>Plan de 15 Días</h2>
+                <div data-aos="flip-left" data-aos-delay="600" data-aos-duration="1300">
+                    <div class="card">
+                        <div class="line-container">
+                            <h2>Plan de 45 Días</h2>
 
-                        <hr class="custom-line">
+                            <hr class="custom-line">
 
-                        <p>El vuelo en helicóptero sobre las Cataratas es uno de los paseos más solicitados en Foz do
-                            Iguaçu. A
-                            bordo de los aviones de Helisul, puede disfrutar de una hermosa vista de las cataratas de
-                            Iguazú.
-                        </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores blanditiis molestias perferendis quibusdam, non laudantium consectetur ipsa dicta sint eos soluta praesentium velit voluptatibus at enim explicabo optio temporibus qui.
+                            </p>
+                        </div>
+
                     </div>
-
-                </div>
-                <div class="card">
-                    <div class="line-container">
-                        <h2>Plan de 30 Días</h2>
-
-                        <hr class="custom-line">
-
-                        <p>El vuelo en helicóptero sobre las Cataratas es uno de los paseos más solicitados en Foz do
-                            Iguaçu. A
-                            bordo de los aviones de Helisul, puede disfrutar de una hermosa vista de las cataratas de
-                            Iguazú.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="card">
-                    <div class="line-container">
-                        <h2>Plan de 45 Días</h2>
-
-                        <hr class="custom-line">
-
-                        <p>El vuelo en helicóptero sobre las Cataratas es uno de los paseos más solicitados en Foz do
-                            Iguaçu. A
-                            bordo de los aviones de Helisul, puede disfrutar de una hermosa vista de las cataratas de
-                            Iguazú.
-                        </p>
-                    </div>
-
                 </div>
 
             </div>
+
         </div>
 
         <hr class="footer-line">
@@ -193,19 +208,24 @@
             <a href="frequent_questions" id="frequent_questions"></a>
             <h2 class="subtitle">Preguntas Frecuentes</h2>
             <h4>¿Cual es el monto minimo que se puede invertir? <button class="readMore_btn"
-                    id="hideText_btn">+</button></h4>
+                    id="hideText_btn">+</button>
+            </h4>
 
             <span class="hide" id="hideText">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptas exercitationem dolorem nihil
-                    deserunt obcaecati, nemo magni perspiciatis iste molestias, cum et adipisci tenetur. Quisquam non
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptas exercitationem
+                    dolorem nihil
+                    deserunt obcaecati, nemo magni perspiciatis iste molestias, cum et adipisci tenetur.
+                    Quisquam non
                     est dolores porro magnam?</p>
             </span>
             <h4>¿Cuales son los requisitos para realizar mi primer contrato con TimeCrypto? <button class="readMore_btn"
                     id="hideText_btn2">+</button></h4>
 
             <span class="hide" id="hideText2">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
-                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi
+                    error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos
+                    quaerat
                     eos
                     illo eius!</p>
             </span>
@@ -214,8 +234,10 @@
             </h4>
 
             <span class="hide" id="hideText3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
-                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi
+                    error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos
+                    quaerat
                     eos
                     illo eius!</p>
             </span>
@@ -225,8 +247,10 @@
             </h4>
 
             <span class="hide" id="hideText4">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
-                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi
+                    error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos
+                    quaerat
                     eos
                     illo eius!</p>
             </span>
@@ -235,15 +259,15 @@
             </h4>
 
             <span class="hide" id="hideText5">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi error,
-                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos quaerat
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolores iste ipsa commodi
+                    error,
+                    soluta, saepe recusandae debitis dolorum id vel quidem eaque vitae eligendi dignissimos
+                    quaerat
                     eos
                     illo eius!</p>
             </span>
 
         </div>
-
-
 
         <hr class="footer-line">
 
@@ -303,6 +327,63 @@
             </div>
         </div>
 
+
+        <div id="access_container" class="access-container">
+            <div class="access">
+                <h2>Formulario de Acceso</h1>
+                    <p>
+                        Para ingresar ingrese a continuacion el email y contraseña con la cual se registro.
+                    </p>
+                    <form id="form_access">
+                        <label for="correo">Correo electrónico: </label>
+                        <input type="email" name="correo" id="correo">
+                        <label for="password">Contraseña: </label>
+                        <input type="password">
+                        <input class="btn btn-outline-light me-2 btn-form" type="submit" value="Enviar">
+                        </button>
+                    </form>
+                    <button id="close" class="btn btn-outline-light me-2 btn-form">Cerrar</button>
+            </div>
+        </div>
+
+        <div id="register_container" class="access-container">
+            <div class="access">
+                <h2>Formulario de Registro</h1>
+                    <p>
+                        Para ingresar ingrese a continuacion el email y contraseña con la cual se registro.
+                    </p>
+                    <form id="form_register">
+                        <label for="name">Nombre: </label>
+                        <input type="text" name="name" id="name">
+                        <label for="correo">Correo electrónico: </label>
+                        <input type="email" name="correo" id="correo">
+                        <label for="password">Contraseña: </label>
+                        <input type="password">
+                        <input class="btn btn-outline-light me-2 btn-form" type="submit" value="Registrarse">
+                        </button>
+                    </form>
+                    <button id="registerClose" class="btn btn-outline-light me-2 btn-form">Cerrar</button>
+            </div>
+        </div>
+
+        <div id="contracContainer" class="access-container">
+            <div class="access">
+                <h2 id="h2Contrac">El usuario: </h2>
+                <p></p>
+                <button id="contracContainerClose" class="btn btn-outline-light me-2 btn-form">Cerrar</button>
+            </div>
+        </div>
+
+        <div id="alertContrac" class="alert-container">
+            <div class="box">
+                <span id="btn-cross" class="button-cross"></span>
+                <p>Para ver contratos se requiere iniciar sesión previamente</p>
+            </div>
+        </div>
+
+       
+
+
         <footer class="bg-dark">
             <!-- Contenido del footer -->
             <hr class="footer-line">
@@ -342,6 +423,10 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

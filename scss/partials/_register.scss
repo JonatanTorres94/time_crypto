@@ -1,0 +1,65 @@
+.register-container {
+    display: flex;
+    background-color: rgba(95, 95, 82, 0.3);
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.showR {
+    pointer-events: auto;
+    opacity: 0;
+}
+
+.register {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        opacity: 0.7;
+        font-size: 14px;
+    }
+
+    label {
+        display: block;
+        text-align: start;
+        margin: 1%;
+        font-size: 18px;
+    }
+
+    input {
+        display: block;
+        align-items: start;
+        border-radius: 5px;
+    }
+}
+
+.btn-form {
+    float: left;
+    margin: 25px 20px 0px 50px;
+    background-color: #f3ba2f;
+    color: #000005;
+    border: none;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+}
