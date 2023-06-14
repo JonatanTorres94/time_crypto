@@ -1,0 +1,7 @@
+[
+    {"id":4,"name":"Quartely" , "value":5500 , "expiration":"90 days", "description": "The 90-day fixed interest plan provides us with an estimated profit of 55%" },
+    {"id":5,"name":"Biannual" , "value":7500 , "expiration":"180 days", "description": "The 180-day fixed interest plan provides us with an estimated profit of 130%"},
+    {"id":6,"name":"Monthly" , "value":3500 , "expiration": "30 days", "description": "The 30-day fixed interest plan provides us with an estimated profit of 25%" },
+    {"id":7,"name":"Quartely" , "value":5500 , "expiration":"90 days", "description": "The 90-day fixed interest plan provides us with an estimated profit of 55%" },
+    {"id":8,"name":"Quartely" , "value":5500 , "expiration":"90 days", "description": "The 90-day fixed interest plan provides us with an estimated profit of 55%" }
+]

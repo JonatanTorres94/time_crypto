@@ -1,0 +1,5 @@
+[
+    {"id":1,"name":"Weekly" , "value":500 , "expiration": "7 days", "description": "The 7-day fixed interest plan provides us with an estimated profit of 5%"},
+    {"id":2,"name":"Biweekly" , "value":1500 , "expiration":"15 days", "description": "The 15-day fixed interest plan provides us with an estimated profit of 12%" },
+    {"id":3,"name":"Monthly" , "value":3500 , "expiration": "30 days", "description": "The 30-day fixed interest plan provides us with an estimated profit of 25%" }
+]

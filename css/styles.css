@@ -82,7 +82,7 @@
 }
 .access p {
   opacity: 0.7;
-  font-size: 14px;
+  font-size: 16px;
 }
 .access label {
   display: block;
@@ -104,6 +104,12 @@
   border: none;
   font-size: 18px;
   transition: background-color 0.5s ease;
+}
+
+#errorData {
+  margin-top: 10px;
+  background-color: red;
+  color: #f0ff1e;
 }
 
 .alert-container {
@@ -296,7 +302,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   padding-bottom: 5%;
-  margin: 20px 100px 20px 250px;
+  margin: 30px 100px 20px 250px;
   grid-gap: 20px;
   justify-content: center;
 }
@@ -340,10 +346,18 @@
 }
 
 .btn-card {
+  display: grid;
+  justify-content: center;
   align-items: center;
-  align-content: center;
+  border-radius: 15px;
+  font-size: 20px;
   size: 25px;
-  color: #dfa20a;
+  color: #0c0900;
+  background-color: #dfa20a;
+  cursor: pointer;
+}
+.btn-card:hover {
+  background-color: #ffc107;
 }
 
 @media (max-width: 1450px) {
@@ -525,6 +539,69 @@
   height: 0;
   width: 70%;
   margin: 0 auto;
+}
+
+#h2Contrac {
+  margin: 15px;
+}
+
+.contract-container {
+  display: flex;
+  background-color: rgba(95, 95, 82, 0.3);
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.viewContract {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 750px;
+  max-width: 100%;
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.viewContract h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.viewContract p {
+  opacity: 0.7;
+  font-size: 16px;
+}
+.viewContract label {
+  display: block;
+  text-align: start;
+  margin: 1%;
+  font-size: 18px;
+}
+.viewContract input {
+  display: block;
+  align-items: start;
+  border-radius: 5px;
+}
+
+#listJson {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
 }
 
 .wrapper {

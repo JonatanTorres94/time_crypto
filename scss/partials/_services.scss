@@ -1,3 +1,4 @@
+
 .services {
 
     h3 {
@@ -32,6 +33,7 @@
         
         }
 
+
         .footer {
             display: none;
         }
@@ -39,13 +41,14 @@
 
 }
 
+
 .card-container {
     display: grid;
     
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     padding-bottom: 5%;
-    margin: 20px 100px 20px 250px;
+    margin: 30px 100px 20px 250px;
     grid-gap: 20px;
     justify-content: center;
 }
@@ -79,6 +82,7 @@
         transform: scale(1.04);
     }
 
+
 }
 
 .line-container {
@@ -93,12 +97,23 @@
     margin: 0 auto;
 }
 
+
 .btn-card{
+    display: grid;
+    justify-content: center;
     align-items: center;
-    align-content: center;
+    border-radius: 15px;
+    font-size: 20px;
     size: 25px;
-    color: #dfa20a;
+    color: #0c0900;
+    background-color: #dfa20a;
+    cursor: pointer;
+    &:hover{
+        background-color: #ffc107;
+    }
 }
+
+
 
 
 

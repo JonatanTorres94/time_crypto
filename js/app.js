@@ -1,18 +1,17 @@
 
 class Client {
 
-    constructor(id, name, email, password, capital) {
+    constructor(id, name, email, password, contract) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.capital = capital;
-        this.investor = false;
+        this.contract = false;
     }
 
 
     invest() {
-        this.investor = true
+        this.contract = true
     }
 
     show_earnings(capital) {
@@ -34,17 +33,19 @@ class Client {
 
 };
 
-class ContractCard {
+// class Contracts {
 
-    constructor(name, description, amout, status, user) {
-        this.name = name;
-        this.description = description;
-        this.amout = amout;
-        this.status = status;
-        this.user = user;
-    }
+//     constructor(id,name, value,status, user) {
+//         this.id = id;
+//         this.name = name;
+//         this.value = value;
+//         this.status = status;
+//         this.user = user;
+//     }
 
-};
+// };
+
+
 
 
 function id_generator(min, max) {
@@ -53,14 +54,16 @@ function id_generator(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 };
 
-sessionStorage.clear();
 
-// const clientAdmin = new Client(0, 'admin', 'admin@admin', '1234', 1000);
+
+
+
 let login = false;
-
+let isLocal = false;
 //const contractDefault = new ContractCard('Plan de 45 días', 'Ganancias estimadas del 30%', 1000, true, clientAdmin.name)
 
-let clients = [];
+let clients = [{ id: 1, name: 'Administrador', email: 'admin@admin.com', password: '1234' }];
+
 let emailExist = {};
 let duplicateMail = {};
 //clients.push(clientAdmin);
@@ -159,7 +162,15 @@ form_register.addEventListener('submit', (e) => {
     let emailR = inputsR[3].value
     let passwordR = inputsR[5].value
     const client1 = new Client(id, name, emailR, passwordR);
+
     clients.push(client1)
+
+
+    let registerClient = clients[clients.length - 1];
+    let dJson = JSON.stringify(registerClient);
+    localStorage.setItem("clients", dJson);
+
+    console.log(clients)
 
     for (let i = 0; i < clients.length; i++) {
 
@@ -187,6 +198,7 @@ form_register.addEventListener('submit', (e) => {
 
 });
 
+let errorData = document.getElementById('errorData');
 
 let form_access = document.getElementById('form_access');
 form_access.addEventListener('submit', (e) => {
@@ -194,20 +206,59 @@ form_access.addEventListener('submit', (e) => {
     let inputs = e.target.children;
     let email = inputs[1].value;
     let password = inputs[3].value;
+    const p = document.createElement("p");
 
-    for (let i = 0; i < clients.length; i++) {
-        if (clients[i].email === email && clients[i].password === password) {
+
+    if (clients.length != 0) {
+        // LOGIN POR USERS DE ARRAY 
+        for (let i = 0; i < clients.length; i++) {
+            if (clients[i].email === email && clients[i].password === password) {
+
+                let clientName = clients[i].name;
+                userName.innerHTML = clientName
+                login = true;
+                break;
+            }
+        }
+
+        //LOGIN POR USER REGISTRADOS Y GUARDADOS EN LOCAL STORAGE
+        if (localStorage != null) {
+            let clientLocal = JSON.parse(localStorage.getItem("clients"))
+            if (clientLocal.email === email && clientLocal.password === password) {
+                let clientName = clientLocal.name;
+                userName.innerHTML = clientName
+                access_container.classList.remove('show');
+                btn_access.classList.add('hide');
+                login = true;
+                isLocal = true;
+
+            }
+
+        } else {
+            console.log("Local storage es NULL")
+        }
+
+        if (login) {
             access_container.classList.remove('show');
             btn_access.classList.add('hide');
-            let loggedClient = clients[i];
-            let clientName = clients[i].name;
-            let dJson = JSON.stringify(loggedClient);
-            sessionStorage.setItem("clients", dJson);
-            userName.innerHTML = clientName
-            login = true;
-            break;
+        } else {
+
+            p.innerHTML = "<p>wrong data</p>";
+
+            //Borrar mensaje de correo invalido a los 3 seg
+            setTimeout(() => {
+                p.innerHTML = '';
+            }, 3000);
+
+            errorData.append(p);
+
+
         }
+
+    } else {
+        console.log("there are no registered customers")
     }
+
 
 });
 
@@ -218,18 +269,180 @@ let contracContainer = document.getElementById('contracContainer');
 let contract = document.getElementById('contract');
 let h2Contrac = document.getElementById('h2Contrac');
 let pContrac = document.getElementById('pContrac');
+let contrctButton = document.getElementById('contrctButton');
 
+//Controlador del formulario donde veo los contratos
 contract.addEventListener('click', () => {
-    login ? contracContainer.classList.add('show') : alertContrac.classList.add('showAlert');
-    for (let i = 0; i < sessionStorage.length; i++) {
-        //let nameSession = sessionStorage.getItem(clients);
-        //console.log(JSON.parse(sessionStorage.getItem(clients.name))); Al enviar el Parse me devuelve un NULL, al consultar typeof me dice que es un objet sin enviar el parse
-        h2Contrac.innerHTML = (clients[i].name);
+    if (login && isLocal) {
+        let clientLocal = JSON.parse(localStorage.getItem("clients"))
+        contracContainer.classList.add('show')
+        try {
+            h2Contrac.innerHTML = (clientLocal.name)//(clients[i].name);
+        } catch (error) {
+            console.log(error)
+        }
+
+    } else if (login) {
+        contracContainer.classList.add('show')
+        for (let i = 0; i < clients.length; i++) {
+
+            try {
+                h2Contrac.innerHTML = (clients[i].name);
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+    } else {
+        alertContrac.classList.add('showAlert');
     }
-    
+    console.log(clients)
+
+
+    // if (contracts.length === 0) {
+    //     pContrac.innerHTML = ("You currently do not have active contracts, this may be because they ended or because you did not contract them. To make a contract click on the one below");
+
+    //     requestData(); // Me muestr el JSON con los datos
+
+    // }
     //pContrac.innerHTML = ("Tiene los siguientes contratos activos: "); // aca se va a completar con la informacion de la clase ContractCard
 
 })
+
+let tradingPlans = document.getElementById("tradingPlans");
+let contexCardard = document.getElementById("contexCardard");
+const requestData = async () => {
+    try {
+        const response = await fetch("../items.json");
+        const data = await response.json();
+
+        const response2 = await fetch("../items_trading_plan.json");
+        const data2 = await response2.json();
+
+
+        data.forEach((item) => {
+            const card = document.createElement("div");
+
+            switch (item.id) {
+                case 1:
+                    card.innerHTML = `
+                    <div class="card">
+                            <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                        </div>
+                    </div>
+                    `
+                    break;
+                case 2:
+                    card.innerHTML = `
+                    <div class="card">
+                        <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                        </div>
+                    </div>
+                    `
+                    break;
+                case 3:
+                    card.innerHTML = `
+                    <div class="card">
+                        <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                         </div>
+                    </div>
+                    `
+                    break;
+
+            }
+            contexCardard.append(card);
+            
+        });
+
+        data2.forEach((item) => {
+            const cardTrading = document.createElement("div");
+            switch (item.id) {
+                case 4:
+                    cardTrading.innerHTML = `
+                    <div class="card">
+                        <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                        </div>
+                    </div>
+                    `
+                    break;
+                case 5:
+                    cardTrading.innerHTML = `
+                    <div class="card">
+                        <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                        </div>
+                    </div>
+                    `
+                    break;
+
+                case 6:
+                    cardTrading.innerHTML = `
+                    <div class="card">
+                         <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                        </div>
+                    </div>
+                    `
+                    break;
+                case 7:
+                    cardTrading.innerHTML = `
+                    <div class="card">
+                         <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                         </div>
+                     </div>
+                     `
+                    break;
+                case 8:
+                    cardTrading.innerHTML = `
+                    <div class="card">
+                        <div class="line-container" >
+                            <h2>${item.name}</h2>
+                            <hr class="custom-line">
+                            <p>${item.description} </p>
+                            <p class="btn-card"> Contratar </p>
+                        </div>
+                     </div>
+                    `
+                    break;
+            };
+
+            tradingPlans.append(cardTrading);
+        });
+
+
+    } catch (error) {
+        console.log(error);
+    }
+
+};
+
+requestData();
 
 contracContainerClose.addEventListener('click', () => {
     contracContainer.classList.remove('show');
@@ -239,8 +452,7 @@ btnCross.addEventListener('click', () => {
 })
 
 
+//"flip-left" data-aos-delay="100" data-aos-duration="800"
 
-for (let i = 0; i < contracts.length; i++) {
-    console.log(contracts[i].user);
-}
+
 
