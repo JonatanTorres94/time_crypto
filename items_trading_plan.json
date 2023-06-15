@@ -1,7 +1,7 @@
 [
-    {"id":4,"name":"Quartely" , "value":5500 , "expiration":"90 days", "description": "The 90-day fixed interest plan provides us with an estimated profit of 55%" },
-    {"id":5,"name":"Biannual" , "value":7500 , "expiration":"180 days", "description": "The 180-day fixed interest plan provides us with an estimated profit of 130%"},
-    {"id":6,"name":"Monthly" , "value":3500 , "expiration": "30 days", "description": "The 30-day fixed interest plan provides us with an estimated profit of 25%" },
-    {"id":7,"name":"Quartely" , "value":5500 , "expiration":"90 days", "description": "The 90-day fixed interest plan provides us with an estimated profit of 55%" },
-    {"id":8,"name":"Quartely" , "value":5500 , "expiration":"90 days", "description": "The 90-day fixed interest plan provides us with an estimated profit of 55%" }
+    {"id":4,"name":"Trading high risk" , "value":5500 , "expiration":"90 days", "description": "The high risk trade has an expected profit taking of 18%" },
+    {"id":5,"name":"Trading Medium risk" , "value":7500 , "expiration":"60 days", "description": "Medium risk trading offers a win percentage of approximately 10%"},
+    {"id":6,"name":"Trading Low risk" , "value":3500 , "expiration": "30 days", "description": "Low risk trading is the safest way to invest with a 5% profit rate" },
+    {"id":7,"name":"Cryptocurrency trading" , "value":5500 , "expiration":"100 days", "description": "Trading with crypto assets is high risk but so is its benefit, offering estimated profits of 25%" },
+    {"id":8,"name":"Equipment trading" , "value":5500 , "expiration":"20 days", "description": "Equipment trade is a trading carried out between several partners, the expected profits are 10%" }
 ]

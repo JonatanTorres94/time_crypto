@@ -222,7 +222,7 @@ form_access.addEventListener('submit', (e) => {
         }
 
         //LOGIN POR USER REGISTRADOS Y GUARDADOS EN LOCAL STORAGE
-        if (localStorage != null) {
+        if (localStorage.length == 1) {
             let clientLocal = JSON.parse(localStorage.getItem("clients"))
             if (clientLocal.email === email && clientLocal.password === password) {
                 let clientName = clientLocal.name;
@@ -263,51 +263,117 @@ form_access.addEventListener('submit', (e) => {
 });
 
 let alertContrac = document.getElementById('alertContrac');
+let alertLogin = document.getElementById('alertLogin');
 let btnCross = document.getElementById('btn-cross');
+let cross = document.getElementById('cross');
 let contracContainerClose = document.getElementById('contracContainerClose');
 let contracContainer = document.getElementById('contracContainer');
 let contract = document.getElementById('contract');
 let h2Contrac = document.getElementById('h2Contrac');
-let pContrac = document.getElementById('pContrac');
+let contrac = document.getElementById('contrac');
+let contrac2 = document.getElementById('contrac2');
 let contrctButton = document.getElementById('contrctButton');
+let typeOne = document.getElementById('typeOne');
+let typeTwo = document.getElementById('typeTwo');
+let txtadd = false;
 
 //Controlador del formulario donde veo los contratos
 contract.addEventListener('click', () => {
-    if (login && isLocal) {
+    const jsonStr = localStorage.getItem('contractSelectTrading');
+    const json = localStorage.getItem('contractSelectFixedTerm');
+    const jsonObt2 = JSON.parse(jsonStr)
+    const jsonObt = JSON.parse(json);
+
+    if (login && isLocal && json != null && jsonStr != null) {
         let clientLocal = JSON.parse(localStorage.getItem("clients"))
+
         contracContainer.classList.add('show')
         try {
-            h2Contrac.innerHTML = (clientLocal.name)//(clients[i].name);
+            h2Contrac.innerHTML = (clientLocal.name);
+
+            const name = jsonObt.name;
+            const expiration = jsonObt.expiration;
+            const value = jsonObt.value
+            const msj = `You currently have the contract ${name} with an expiration of ${expiration} and a cost of $${value}`;
+            
+            const titleTwo = document.createElement("h3");
+            const titleOne = document.createElement("h3");
+            if(!txtadd){
+                titleOne.innerHTML = "Current Fixed Term Contract:";
+                titleTwo.innerHTML = "Current Trading Contract:";
+                typeOne.append(titleOne);
+                typeTwo.append(titleTwo);
+                txtadd = true;
+            }
+
+
+            console.log(jsonObt2)
+            const name2 = jsonObt2.name;
+            const expiration2 = jsonObt2.expiration;
+            const value2 = jsonObt2.value
+            const msj2 = `You currently have the contract ${name2} with an expiration of ${expiration2} and a cost of $${value2}`;
+            
+        
+            contrac2.textContent = msj2;
+            contrac.textContent = msj;
         } catch (error) {
             console.log(error)
         }
+    
 
-    } else if (login) {
+
+    } else if (login && json != null && jsonStr != null) {
         contracContainer.classList.add('show')
         for (let i = 0; i < clients.length; i++) {
 
             try {
                 h2Contrac.innerHTML = (clients[i].name);
+                const jsonStr = localStorage.getItem('contractSelectTrading');
+                const json = localStorage.getItem('contractSelectFixedTerm');
+    
+                const jsonObt2 = JSON.parse(jsonStr)
+                const jsonObt = JSON.parse(json);
+    
+                const name = jsonObt.name;
+                const expiration = jsonObt.expiration;
+                const value = jsonObt.value
+                const msj = `You currently have the contract ${name} with an expiration of ${expiration} and a cost of $${value}`;
+                
+                const titleTwo = document.createElement("h3");
+                const titleOne = document.createElement("h3");
+                if(!txtadd){
+                    titleOne.innerHTML = "Current Fixed Term Contract:";
+                    titleTwo.innerHTML = "Current Trading Contract:";
+                    typeOne.append(titleOne);
+                    typeTwo.append(titleTwo);
+                    txtadd = true;
+                }
+    
+    
+                console.log(jsonObt2)
+                const name2 = jsonObt2.name;
+                const expiration2 = jsonObt2.expiration;
+                const value2 = jsonObt2.value
+                const msj2 = `You currently have the contract ${name2} with an expiration of ${expiration2} and a cost of $${value2}`;
+                
+            
+                contrac2.textContent = msj2;
+                contrac.textContent = msj;
             } catch (error) {
                 console.log(error)
             }
         }
 
-    } else {
+    } else if (login) {
         alertContrac.classList.add('showAlert');
+    }else{
+        alertLogin.classList.add('showAlert')
     }
     console.log(clients)
 
 
-    // if (contracts.length === 0) {
-    //     pContrac.innerHTML = ("You currently do not have active contracts, this may be because they ended or because you did not contract them. To make a contract click on the one below");
+});
 
-    //     requestData(); // Me muestr el JSON con los datos
-
-    // }
-    //pContrac.innerHTML = ("Tiene los siguientes contratos activos: "); // aca se va a completar con la informacion de la clase ContractCard
-
-})
 
 let tradingPlans = document.getElementById("tradingPlans");
 let contexCardard = document.getElementById("contexCardard");
@@ -318,6 +384,20 @@ const requestData = async () => {
 
         const response2 = await fetch("../items_trading_plan.json");
         const data2 = await response2.json();
+
+        const addJson = (id) => {
+            let contractSelectFixedTerm = data.find((item) => item.id === id);
+            console.log(contractSelectFixedTerm);
+            let dJson = JSON.stringify(contractSelectFixedTerm);
+            localStorage.setItem("contractSelectFixedTerm", dJson);
+        };
+
+        const addJson2 = (id) => {
+            let contractSelectTrading = data2.find((item) => item.id === id);
+            console.log(contractSelectTrading);
+            let dJson = JSON.stringify(contractSelectTrading);
+            localStorage.setItem("contractSelectTrading", dJson);
+        };
 
 
         data.forEach((item) => {
@@ -331,7 +411,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                         </div>
                     </div>
                     `
@@ -343,7 +423,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                         </div>
                     </div>
                     `
@@ -355,7 +435,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                          </div>
                     </div>
                     `
@@ -363,7 +443,14 @@ const requestData = async () => {
 
             }
             contexCardard.append(card);
-            
+            let letter = document.getElementById(`letter${item.id}`);
+            letter.addEventListener("click", () => addJson(item.id));
+            letter.addEventListener("click", () => {
+                Toastify({
+                    text: `Acquisition completed successfully, your contract expires in: ${item.expiration}`,
+                    duration: 3000
+                }).showToast();
+            });
         });
 
         data2.forEach((item) => {
@@ -376,7 +463,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                         </div>
                     </div>
                     `
@@ -388,7 +475,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                         </div>
                     </div>
                     `
@@ -401,7 +488,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                         </div>
                     </div>
                     `
@@ -413,7 +500,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                          </div>
                      </div>
                      `
@@ -425,7 +512,7 @@ const requestData = async () => {
                             <h2>${item.name}</h2>
                             <hr class="custom-line">
                             <p>${item.description} </p>
-                            <p class="btn-card"> Contratar </p>
+                            <p class="btn-card" id="letter${item.id}"> Contratar </p>
                         </div>
                      </div>
                     `
@@ -433,6 +520,14 @@ const requestData = async () => {
             };
 
             tradingPlans.append(cardTrading);
+            let letter = document.getElementById(`letter${item.id}`);
+            letter.addEventListener("click", () => addJson2(item.id));
+            letter.addEventListener("click", () => {
+                Toastify({
+                    text: `Acquisition completed successfully, your contract expires in: ${item.expiration}`,
+                    duration: 3000
+                }).showToast();
+            });
         });
 
 
@@ -446,13 +541,16 @@ requestData();
 
 contracContainerClose.addEventListener('click', () => {
     contracContainer.classList.remove('show');
-})
+});
 btnCross.addEventListener('click', () => {
     alertContrac.classList.remove('showAlert');
-})
+});
+cross.addEventListener("click", () =>{
+    alertLogin.classList.remove('showAlert');
+});
 
 
-//"flip-left" data-aos-delay="100" data-aos-duration="800"
+//localStorage.clear()
 
 
 

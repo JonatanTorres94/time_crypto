@@ -112,6 +112,74 @@
   color: #f0ff1e;
 }
 
+.contract-container {
+  display: flex;
+  background-color: rgba(95, 95, 82, 0.3);
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.viewContract {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 350px;
+  max-width: 100%;
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.viewContract h2 {
+  margin: 0;
+  font-size: 25px;
+  text-align: center;
+}
+.viewContract h3 {
+  margin: 2%;
+  font-size: 18px;
+}
+.viewContract p {
+  opacity: 0.7;
+  font-size: 16px;
+  margin: 2%;
+}
+.viewContract label {
+  display: block;
+  text-align: start;
+  margin: 1%;
+  font-size: 18px;
+}
+.viewContract .btn-contrac {
+  background-color: #f3ba2f;
+  width: 200px;
+  border-radius: 15px;
+}
+.viewContract .btn-contrac:hover {
+  transform: scale(1.04);
+  background-color: #f7cc5f;
+}
+
+#listJson {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
 .alert-container {
   display: flex;
   background-color: rgba(95, 95, 82, 0.3);
@@ -543,65 +611,6 @@
 
 #h2Contrac {
   margin: 15px;
-}
-
-.contract-container {
-  display: flex;
-  background-color: rgba(95, 95, 82, 0.3);
-  position: fixed;
-  pointer-events: none;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  transition: opacity 0.3s ease;
-}
-
-.show {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.viewContract {
-  display: block;
-  background-color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 650px;
-  height: 750px;
-  max-width: 100%;
-  padding: 30px 50px;
-  border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-.viewContract h2 {
-  margin: 0;
-  font-size: 15px;
-}
-.viewContract p {
-  opacity: 0.7;
-  font-size: 16px;
-}
-.viewContract label {
-  display: block;
-  text-align: start;
-  margin: 1%;
-  font-size: 18px;
-}
-.viewContract input {
-  display: block;
-  align-items: start;
-  border-radius: 5px;
-}
-
-#listJson {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
 }
 
 .wrapper {

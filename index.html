@@ -14,6 +14,8 @@
 
     <!-- My css -->
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -54,9 +56,9 @@
 
                         <div class="text-end">
                             <button id="acceso" type="button"
-                                class="btn btn-outline-light me-2 btn-login">Acceso</button>
+                                class="btn btn-outline-light me-2 btn-login">Log in</button>
                             <button id="register_id" type="button"
-                                class="btn btn-warning btn-signup">Registrarse</button>
+                                class="btn btn-warning btn-signup">Sing Up</button>
                         </div>
                     </div>
                 </div>
@@ -264,37 +266,47 @@
 
         <div id="register_container" class="access-container">
             <div class="access">
-                <h2>Formulario de Registro</h1>
+                <h2>Registration Form</h1>
                     <p>
-                        Para ingresar ingrese a continuacion el email y contraseña con la cual se registro.
+                        To enter, enter the email and password with which you registered.
                     </p>
                     <form id="form_register">
-                        <label for="name">Nombre: </label>
+                        <label for="name">Name: </label>
                         <input type="text" name="name" id="nam">
-                        <label for="correo">Correo electrónico: </label>
+                        <label for="correo">Email: </label>
                         <input type="email" name="correo" id="corr">
-                        <label for="password">Contraseña: </label>
+                        <label for="password">Password: </label>
                         <input type="password">
                         <input class="btn btn-outline-light me-2 btn-form" type="submit" value="Registrarse">
                         </button>
                     </form>
-                    <button id="registerClose" class="btn btn-outline-light me-2 btn-form">Cerrar</button>
+                    <button id="registerClose" class="btn btn-outline-light me-2 btn-form">Closed</button>
             </div>
         </div>
 
         <div id="contracContainer" class="contract-container">
             <div class="viewContract">
                 <h2 id="h2Contrac"></h2>
-                <p id="pContrac"></p>
-                <button id="contracContainerClose" class="btn btn-outline-light me-2 btn-form">Closed</button>
-                <button id="contrctButton" class="btn btn-outline-light me-2 btn-form">Add contracts</button>
+                
+                <div id="typeOne"> </div>
+                <p id="contrac"></p>
+                <div id="typeTwo"></div>
+                <p id="contrac2"></p>
+                <button id="contracContainerClose" class="btn-contrac">Closed</button>
+            </div>
+        </div>
+
+        <div id="alertLogin" class="alert-container">
+            <div class="box">
+                <span id="cross" class="button-cross"></span>
+                <p>To see contracts it is required to log in previously</p>
             </div>
         </div>
 
         <div id="alertContrac" class="alert-container">
             <div class="box">
                 <span id="btn-cross" class="button-cross"></span>
-                <p>Para ver contratos se requiere iniciar sesión previamente</p>
+                <p>To see the contracts, you must first contract a fixed-term contract and a Trading contract, you can do it in the services section of this site.</p>
             </div>
         </div>
 
@@ -341,6 +353,9 @@
 
     <!-- AOS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!-- Tu script personalizado -->
     <script src="./js/app.js"></script>
